@@ -32,7 +32,7 @@ body {
 }
 
 .sidebar {
-  width: 70%;
+  width: 50%;
   min-height: 100vh;
 }
 
@@ -111,11 +111,11 @@ input:hover {
 }
 
 .date-input {
-  width: 45px;
+  width: 50px;
 }
 
 .cvc-input {
-  width: 80%;
+  width: 100%;
 }
 
 button {
