@@ -75,6 +75,7 @@ input {
   padding: 14px;
   border-radius: 6px;
   border: 1px solid var(--gray-200);
+  outline-color: var(--linear-grad-2);
   font-size: 16px;
   color: var(--purple-950);
   transition: all 0.4s;
