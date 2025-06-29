@@ -24,6 +24,7 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background-color: var(--white);
   font-weight: 500;
+  overflow: hidden;
 }
 
 .container {
@@ -32,22 +33,22 @@ body {
 
 .sidebar {
   width: 70%;
-  min-height: 640px;
-  border: 1px solid red;
+  min-height: 100vh;
 }
 
 .sidebar img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
 }
 
 .form-container {
   width: 100%;
-  min-height: 640px;
+  min-height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border: 1px solid blue;
 }
 
 form,
@@ -86,7 +87,7 @@ input:hover {
 .error-msg {
   font-size: 10px;
   color: var(--red);
-  /* display: none; */
+  display: none;
 }
 
 .error-input {
