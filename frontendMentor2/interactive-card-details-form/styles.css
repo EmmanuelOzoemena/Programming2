@@ -24,7 +24,6 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background-color: var(--white);
   font-weight: 500;
-  overflow: hidden;
 }
 
 .container {
@@ -34,12 +33,80 @@ body {
 .sidebar {
   width: 50%;
   min-height: 100vh;
+
+  position: relative;
 }
 
 .sidebar img {
   height: 100vh;
   width: 100%;
   object-fit: cover;
+}
+
+.card-front {
+  position: absolute;
+  top: 90px;
+  right: -100px;
+
+  width: 400px;
+  height: 200px;
+  border-radius: 6px;
+
+  background: url(images/bg-card-front.png);
+  background-position: center;
+}
+
+.card-front img {
+  width: 100px;
+  height: 55px;
+
+  margin: 16px 0 0 24px;
+}
+
+.card-front .details {
+  margin-top: 1.5rem;
+}
+
+.card-number {
+  color: var(--white);
+  font-size: 26px;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.flex-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 16px;
+}
+
+.flex-details p {
+  color: var(--white);
+}
+
+.card-back {
+  position: absolute;
+  top: 340px;
+  right: -150px;
+
+  width: 400px;
+  height: 200px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+
+  background: url(images/bg-card-back.png);
+  background-position: center;
+}
+
+.card-back p {
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 2px;
+  text-align: end;
+  margin-top: 5.8rem;
+  margin-right: 1.8rem;
 }
 
 .form-container {
@@ -58,6 +125,7 @@ form,
   display: flex;
   flex-direction: column;
 
+  margin-left: 4rem;
   /* border: 1px solid red; */
 }
 
@@ -88,7 +156,7 @@ input:hover {
 .error-msg {
   font-size: 10px;
   color: var(--red);
-  display: none;
+  /* display: none; */
 }
 
 .error-input {
@@ -116,7 +184,7 @@ input:hover {
 }
 
 .cvc-input {
-  width: 100%;
+  width: 90%;
 }
 
 button {

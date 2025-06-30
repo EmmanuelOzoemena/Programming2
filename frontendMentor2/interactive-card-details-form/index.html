@@ -25,42 +25,79 @@
     <main class="container">
       <div class="sidebar">
         <img src="images/bg-main-desktop.png" alt="bg-main-desktop" />
+
+        <div class="card-front">
+          <img src="images/card-logo.svg" alt="" />
+
+          <div class="details">
+            <p class="card-number">9591 6489 6389 101E</p>
+
+            <div class="flex-details">
+              <p>Jane Appleseed</p>
+              <p>09/27</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-back">
+          <p>419</p>
+        </div>
       </div>
 
       <div class="form-container">
         <form action="">
           <div class="input-group">
             <label for="Cardholder Name">Cardholder Name</label>
-            <input type="text" placeholder="e.g. Jane Appleseed" class="js-name-input" />
-            <span class="error-msg">Can't be blank</span>
+            <input
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              class="js-name-input"
+            />
+            <span class="error-msg js-name-error"></span>
           </div>
 
           <div class="input-group">
-            <label for=" Card Number"> Card Number</label>
-            <input type="text" placeholder="  e.g. 1234 5678 9123 0000" class="js-card-input" />
-            <span class="error-msg">Wrong format, numbers only</span>
+            <label for=" Card Number">Card Number</label>
+            <input
+              type="text"
+              placeholder="  e.g. 1234 5678 9123 0000"
+              class="js-card-input"
+            />
+            <span class="error-msg js-card-error"></span>
           </div>
 
           <div class="flex">
             <div class="input-group">
-              <label for=" Exp. Date (MM/YY)"> Exp. Date (MM/YY)</label>
+              <label for=" Exp. Date (MM/YY)">Exp. Date (MM/YY)</label>
               <div class="date-input-group">
                 <div>
-                  <input type="number" placeholder="MM" class="date-input js-month-input" />
-                  <span class="error-msg">Can't be blank</span>
+                  <input
+                    type="number"
+                    placeholder="MM"
+                    class="date-input js-month-input"
+                  />
+                  <span class="error-msg js-month-error"></span>
                 </div>
 
                 <div>
-                  <input type="number" placeholder="YY" class="date-input js-year-input" />
-                  <span class="error-msg">Can't be blank</span>
+                  <input
+                    type="number"
+                    placeholder="YY"
+                    class="date-input js-year-input"
+                  />
+                  <span class="error-msg js-year-error"></span>
                 </div>
               </div>
             </div>
 
             <div class="input-group">
               <label for="CVC">CVC</label>
-              <input type="number" placeholder="e.g. 123" class="cvc-input js-cvc-input" />
-              <span class="error-msg">Can't be blank</span>
+              <input
+                type="number"
+                placeholder="e.g. 123"
+                class="cvc-input js-cvc-input"
+              />
+              <span class="error-msg js-cvc-error"></span>
             </div>
           </div>
 
