@@ -164,6 +164,12 @@ input:hover {
 
 .error-input {
   border-color: var(--red);
+  outline-color: var(--red);
+  color: var(--red);
+}
+
+.error-input:hover {
+  border-color: var(--red);
 }
 
 .input-group {
@@ -235,6 +241,7 @@ button:hover {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-top: 12px;
 }
 
 .attribution a {
