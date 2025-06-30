@@ -118,8 +118,7 @@ body {
   justify-content: center;
 }
 
-form,
-.successful-reg {
+form {
   width: 50%;
 
   display: flex;
@@ -127,6 +126,10 @@ form,
 
   margin-left: 4rem;
   /* border: 1px solid red; */
+}
+
+.remove-layout {
+  display: none;
 }
 
 label {
@@ -188,6 +191,7 @@ input:hover {
 }
 
 button {
+  width: 100%;
   margin-top: 16px;
   border: 1px solid var(--purple-950);
   background-color: var(--purple-950);
@@ -203,7 +207,14 @@ button:hover {
 }
 
 .successful-reg {
+  width: 50%;
+
+  /* display: flex; */
+  flex-direction: column;
+
+  margin-left: 4rem;
   text-align: center;
+  display: none;
 }
 
 .successful-reg img {
