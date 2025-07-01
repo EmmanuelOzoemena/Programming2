@@ -73,7 +73,8 @@ button {
 
   position: absolute;
   bottom: -20px;
-  left: 47%;
+  left: 50%;
+  transform: translateX(-50%);
   cursor: pointer;
 }
 
@@ -109,9 +110,5 @@ button img {
   .pattern-divider-mobile {
     display: block;
     margin: 2rem auto;
-  }
-
-  button {
-    left: 44%;
   }
 }
