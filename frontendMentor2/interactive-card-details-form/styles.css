@@ -43,6 +43,10 @@ body {
   object-fit: cover;
 }
 
+.bg-main-mobile {
+  display: none;
+}
+
 .card-front {
   position: absolute;
   top: 90px;
@@ -246,4 +250,89 @@ button:hover {
 
 .attribution a {
   color: var(--attribution);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .bg-main-desktop {
+    display: none;
+  }
+
+  .bg-main-mobile {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .sidebar img {
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-front {
+    top: 110px;
+    right: 100px;
+
+    width: 70%;
+    height: 150px;
+    z-index: 999;
+  }
+
+  .card-front img {
+    width: 100px;
+    height: 55px;
+
+    margin: 12px 0 0 20px;
+  }
+
+  .card-front .details {
+    margin-top: 0.5rem;
+  }
+
+  .card-number {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+
+  .flex-details {
+    margin: 10px 16px;
+  }
+
+  .flex-details p {
+    font-size: 14px;
+  }
+
+  .card-back {
+    top: 10px;
+    right: 40px;
+
+    width: 70%;
+    height: 150px;
+  }
+
+  .card-back p {
+    margin-top: 3.8rem;
+  }
+
+  .form-container {
+    min-height: 0;
+    margin-top: 4.5rem;
+  }
+
+  form,
+  .successful-reg {
+    width: 80%;
+    margin-left: 0;
+  }
+
+  .attribution {
+    margin-bottom: 2rem;
+  }
 }
