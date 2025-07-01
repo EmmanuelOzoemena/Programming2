@@ -332,6 +332,11 @@ button:hover {
     margin-left: 0;
   }
 
+  form, 
+  .successful-reg {
+    margin-top: 2rem;
+  }
+
   .attribution {
     margin-bottom: 2rem;
   }
