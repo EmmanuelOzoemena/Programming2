@@ -24,24 +24,35 @@
   <body>
     <main class="container">
       <div class="sidebar">
-        <img src="images/bg-main-desktop.png" alt="bg-main-desktop" class="bg-main-desktop" />
-        <img src="images/bg-main-mobile.png" alt="bg-main-mobile" class="bg-main-mobile">
+        <img
+          src="images/bg-main-desktop.png"
+          alt="bg-main-desktop"
+          class="bg-main-desktop"
+        />
+        <img
+          src="images/bg-main-mobile.png"
+          alt="bg-main-mobile"
+          class="bg-main-mobile"
+        />
 
         <div class="card-front">
           <img src="images/card-logo.svg" alt="" />
 
           <div class="details">
-            <p class="card-number">9591 6489 6389 1019</p>
+            <p class="card-number js-card-number">0000 0000 0000 0000</p>
 
             <div class="flex-details">
-              <p>Jane Appleseed</p>
-              <p>09/27</p>
+              <p class="js-card-holder-name">Card Holder Name</p>
+              <div>
+                <p class="js-expiring-month">00 /</p>
+                <p class="js-expiring-year">00</p>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="card-back">
-          <p>419</p>
+          <p class="js-cvc-number">000</p>
         </div>
       </div>
 
@@ -123,7 +134,7 @@
 
           <p>We've added your card details</p>
 
-          <button class="js-confirm-button">Continue</button>
+          <button class="js-continue-button">Continue</button>
 
           <div class="attribution">
             Challenge by

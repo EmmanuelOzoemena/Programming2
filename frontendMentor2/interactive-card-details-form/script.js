@@ -9,6 +9,8 @@ function cardHolderName() {
   const cardHolderName = inputField.value;
   let errorMsg = document.querySelector(".js-name-error");
 
+  let cardHolderElement = document.querySelector(".js-card-holder-name");
+
   if (cardHolderName === "") {
     errorMsg.innerHTML = "Can't be blank";
     inputField.classList.add("error-input");
@@ -17,6 +19,8 @@ function cardHolderName() {
     errorMsg.innerHTML = "";
     inputField.classList.remove("error-input");
   }
+
+  cardHolderElement.innerHTML = cardHolderName;
 }
 
 function cardNumber() {
@@ -33,6 +37,8 @@ function cardNumber() {
   inputField.value = formattedNumber;
   // console.log(formattedNumber);
 
+  let cardNumberElement = document.querySelector(".js-card-number");
+
   // Validation
   if (cardNumber === "") {
     errorMsg.innerHTML = "Can't be blank";
@@ -46,12 +52,15 @@ function cardNumber() {
     errorMsg.innerHTML = "";
     inputField.classList.remove("error-input");
   }
+
+  cardNumberElement.innerHTML = formattedNumber;
 }
 
 function expiringMonth() {
   const inputField = document.querySelector(".js-month-input");
   const expiringMonth = inputField.value;
   let errorMsg = document.querySelector(".js-month-error");
+  let expiringMonthElement = document.querySelector(".js-expiring-month");
 
   // Validation
   if (expiringMonth === "") {
@@ -66,12 +75,15 @@ function expiringMonth() {
     errorMsg.innerHTML = "";
     inputField.classList.remove("error-input");
   }
+
+  expiringMonthElement.innerHTML = expiringMonth;
 }
 
 function expiringYear() {
   const inputField = document.querySelector(".js-year-input");
   const expiringYear = inputField.value;
   let errorMsg = document.querySelector(".js-year-error");
+  let expiringYearElement = document.querySelector(".js-expiring-year");
 
   // Validation
   if (expiringYear === "") {
@@ -86,12 +98,15 @@ function expiringYear() {
     errorMsg.innerHTML = "";
     inputField.classList.remove("error-input");
   }
+
+  expiringYearElement.innerHTML = `/ ${expiringYear}`;
 }
 
 function cvcNumber() {
   const inputField = document.querySelector(".js-cvc-input");
   const cvcNumber = inputField.value;
   let errorMsg = document.querySelector(".js-cvc-error");
+  let cvcNumberElement = document.querySelector(".js-cvc-number");
 
   // Validation
   if (cvcNumber === "") {
@@ -106,6 +121,8 @@ function cvcNumber() {
     errorMsg.innerHTML = "";
     inputField.classList.remove("error-input");
   }
+
+  cvcNumberElement.innerHTML = cvcNumber;
 }
 
 function allInputValues() {
@@ -128,14 +145,13 @@ function successful() {
   if (!notFilled && !isInvalid) {
     successful.style.display = "block";
     formLayout.classList.add("remove-layout");
-
-    setTimeout(function () {
-      successful.style.display = "none";
-      formLayout.classList.remove("remove-layout");
-
-      document.forms[0].reset(); // refresh the form
-    }, 3000);
   }
+
+  document
+    .querySelector(".js-continue-button")
+    .addEventListener("click", () => {
+      location.reload();
+    });
 }
 
 function submitForm() {

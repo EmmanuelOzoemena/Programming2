@@ -87,6 +87,7 @@ body {
 }
 
 .flex-details p {
+  display: inline;
   color: var(--white);
 }
 
