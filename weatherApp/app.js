@@ -24,7 +24,7 @@ const searchWeather = () => {
   fetch(url + "&q=" + valueSearch.value)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
 
       if (data.cod === 200) {
         city.querySelector("figcaption").innerHTML = data.name;
