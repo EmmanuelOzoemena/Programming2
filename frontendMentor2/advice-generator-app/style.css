@@ -31,7 +31,7 @@ body {
 .container {
   width: 500px;
   height: max-content;
-  min-height: 300px;
+  /* min-height: 300px; */
   background-color: var(--blue-900);
   border-radius: 12px;
   padding: 30px;
@@ -56,7 +56,7 @@ body {
 }
 
 .pattern-divider-desktop {
-  margin-top: 2rem;
+  margin: 2rem auto;
 }
 
 .pattern-divider-mobile {
@@ -90,4 +90,28 @@ button img {
 
 .attribution a {
   color: var(--attribution);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .container .advice-text {
+    font-size: 20px;
+  }
+
+  .pattern-divider-desktop {
+    display: none;
+  }
+
+  .pattern-divider-mobile {
+    display: block;
+    margin: 2rem auto;
+  }
+
+  button {
+    left: 44%;
+  }
 }
