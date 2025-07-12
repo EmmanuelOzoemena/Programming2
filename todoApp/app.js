@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `${(completedTasks / totalTasks) * 100}%`
       : "0%";
     progressNumbers.textContent = `${completedTasks} / ${totalTasks}`;
+
+    // Confetti animations after completion
+    if (checkCompletion && totalTasks > 0 && completedTasks === totalTasks) {
+      Confetti();
+    }
   };
 
   const addTask = (text, completed = false, checkCompletion = true) => {
@@ -112,3 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const Confetti = () => {
+  // Copy and paste the Confetti animations codes from Confetti docs here
+};
