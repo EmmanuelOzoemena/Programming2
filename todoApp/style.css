@@ -95,13 +95,6 @@ body {
   font-size: 1.5rem;
 }
 
-
-
-
-
-
-
-
 .input-area {
   display: flex;
   justify-content: space-between;
@@ -235,4 +228,30 @@ body {
 
 .task-buttons .delete-btn {
   background-color: #ff6f91;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 0 20px;
+    padding: 0 10px;
+  }
+
+  .todo-app {
+    padding: 1.5rem;
+    gap: 20px;
+  }
+
+  #numbers {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+
+  .input-area input {
+    font-size: 1rem;
+  }
+
+  #task-list li {
+    font-size: 1rem;
+  }
 }
