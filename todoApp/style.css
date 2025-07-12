@@ -13,7 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   /* background: url(); */
-  background: rgb(201, 255, 119);
+  background-color: gray;
 }
 
 .container {
@@ -44,6 +44,63 @@ body {
 .todo-app h1 {
   font-size: 2rem;
 }
+
+.stat-container {
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.details {
+  width: 100%;
+}
+
+.details h3 {
+  color: #fff;
+}
+
+#progressbar {
+  width: 100%;
+  height: 7px;
+  background-color: rgba(255, 194, 209, 0.3);
+  border-radius: 20px;
+  position: relative;
+  margin-top: 15px;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background-color: #ff6f91;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+#numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #ff6f91;
+  border: 2px solid rgba(255, 194, 209, 0.3);
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+
+
+
+
+
+
 
 .input-area {
   display: flex;
