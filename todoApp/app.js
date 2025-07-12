@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const todosContainer = document.querySelector(".todos-container");
 
+  const progressBar = document.getElementById("progress");
+  const progressNumbers = document.getElementById("numbers");
+
   const toggleEmptyState = () => {
     emptyImage.style.display =
       taskList.children.length === 0 ? "block" : "none";
@@ -13,8 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
     todosContainer.style.width = taskList.children.length > 0 ? "100%" : "50%";
   };
 
-  const addTask = (text, completed = false) => {
-    // event.preventDefault();
+  const updateProgress = (checkCompletion = true) => {
+    const totalTasks = taskList.children.length;
+    const completedTasks =
+      taskList.querySelectorAll(".checkbox:checked").length;
+
+    progressBar.style.width = totalTasks
+      ? `${(completedTasks / totalTasks) * 100}%`
+      : "0%";
+    progressNumbers.textContent = `${completedTasks} / ${totalTasks}`;
+  };
+
+  const addTask = (text, completed = false, checkCompletion = true) => {
+    event.preventDefault();
 
     const taskText = text || taskInput.value.trim();
     if (!taskText) {
@@ -57,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
       editBtn.style.opacity = isChecked ? "0.5" : "1";
 
       editBtn.style.pointerEvents = isChecked ? "none" : "auto";
+
+      updateProgress();
     });
 
     editBtn.addEventListener("click", () => {
@@ -65,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         list.remove();
         toggleEmptyState();
+
+        updateProgress(false);
       }
     });
 
@@ -73,11 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
       list.remove();
 
       toggleEmptyState(); // Called after if the list is empty
+
+      updateProgress();
     });
 
     taskList.appendChild(list);
     taskInput.value = "";
     toggleEmptyState();
+
+    updateProgress(checkCompletion);
   };
 
   addTaskBtn.addEventListener("click", () => addTask());
