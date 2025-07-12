@@ -32,6 +32,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const saveTaskToLocalStorage = () => {
+    const tasks = Array.from(taskList.querySelectorAll("li")).map((list) => ({
+      text: list.querySelector("span").textContent,
+      completed: list.querySelector(".checkbox").checked,
+    }));
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  };
+
+  const loadTasksFromLocalStorage = () => {
+    const savedTasks = JSON.parse(localStorage.getItem("task")) || [];
+    savedTasks.forEach(({ text, completed }) => {
+      addTask(text, completed, false);
+    });
+
+    toggleEmptyState();
+    updateProgress();
+  };
+
   const addTask = (text, completed = false, checkCompletion = true) => {
     event.preventDefault();
 
@@ -78,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       editBtn.style.pointerEvents = isChecked ? "none" : "auto";
 
       updateProgress();
+      saveTaskToLocalStorage();
     });
 
     editBtn.addEventListener("click", () => {
@@ -88,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleEmptyState();
 
         updateProgress(false);
+        saveTaskToLocalStorage();
       }
     });
 
@@ -98,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleEmptyState(); // Called after if the list is empty
 
       updateProgress();
+      saveTaskToLocalStorage();
     });
 
     taskList.appendChild(list);
@@ -105,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleEmptyState();
 
     updateProgress(checkCompletion);
+    saveTaskToLocalStorage();
   };
 
   addTaskBtn.addEventListener("click", () => addTask());
@@ -116,6 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
       addTask();
     }
   });
+
+  loadTasksFromLocalStorage();
 });
 
 const Confetti = () => {
