@@ -1,6 +1,12 @@
+import { useState } from "react";
 import "./Header.css";
 
 const Header = () => {
+  const [showCart, setShowCart] = useState(false);
+
+  const handleMouseEnter = () => setShowCart(true);
+  const handleMouseLeave = () => setShowCart(false);
+
   return (
     <>
       <header>
@@ -41,12 +47,27 @@ const Header = () => {
           </div>
 
           <div className="right-section">
-            <img src="images/icon-cart.svg" alt="cart" />
+            <img
+              src="images/icon-cart.svg"
+              alt="cart"
+              className="cart-icon"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            />
+
             <img
               src="images/image-avatar.png"
               alt="avatar"
               className="avatar-pic"
             />
+
+            {showCart && (
+              <div className="cart-dropdown">
+                <h4>Cart</h4>
+                <hr />
+                <p className="empty-cart">Your cart is empty.</p>
+              </div>
+            )}
           </div>
         </div>
       </header>
