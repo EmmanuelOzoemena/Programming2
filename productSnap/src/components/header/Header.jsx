@@ -6,6 +6,18 @@ const Header = () => {
       <header>
         <div className="container">
           <div className="left-section">
+            {/* <div className="toggle-btn"> */}
+            <img
+              src="images/icon-menu.svg"
+              alt="menu-icon"
+              className="toggle-btn"
+            />
+            <img
+              src="images/icon-close.svg"
+              alt="close-icon"
+              className="toggle-btn"
+            />
+            {/* </div> */}
             <img src="images/logo.svg" alt="logo" />
             <nav>
               <ul>

@@ -25,6 +25,10 @@ nav ul {
   cursor: pointer;
 }
 
+.toggle-btn {
+  display: none;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -53,3 +57,5 @@ nav ul li a {
   width: 3rem;
   height: 3rem;
 }
+
+
