@@ -20,6 +20,14 @@
     <header>
       <div class="header-container">
         <div class="logo">
+          <img src="assets/icon-menu.svg" alt="menu-icon" class="menu-icon" />
+
+          <img
+            src="assets/icon-close.svg"
+            alt="close-icon"
+            class="close-icon"
+          />
+
           <h3>Food</h3>
         </div>
 
@@ -60,6 +68,24 @@
       </div>
     </header>
 
+    <script>
+      const openMenu = document.querySelector(".menu-icon");
+      const navLinks = document.querySelector("nav ul");
+      const closeIcon = document.querySelector(".close-icon");
 
+      // Open the menu
+      openMenu.addEventListener("click", () => {
+        navLinks.classList.add("show");
+        openMenu.style.display = "none";
+        closeIcon.style.display = "block";
+      });
+
+      // Close the menu
+      closeIcon.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        openMenu.style.display = "block";
+        closeIcon.style.display = "none";
+      });
+    </script>
   </body>
 </html>

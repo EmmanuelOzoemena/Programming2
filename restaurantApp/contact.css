@@ -45,6 +45,18 @@ header {
   border-bottom: 2px solid var(--light-grayish-blue);
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo .menu-icon,
+.logo .close-icon {
+  display: none;
+  cursor: pointer;
+}
+
 .logo h3 {
   font-size: 1.5rem;
   cursor: pointer;
@@ -56,13 +68,9 @@ nav ul {
   align-items: center;
 }
 
-/* .middle-section img {
-  margin-right: 2.5rem;
-  cursor: pointer;
-} */
-
-.toggle-btn {
+.middle-section img {
   display: none;
+  cursor: pointer;
 }
 
 nav ul {
@@ -128,4 +136,45 @@ nav ul li a.active {
 .avatar-pic:hover {
   border: 2px solid var(--orange);
   border-radius: 50%;
+}
+
+/* Header media query */
+
+@media (max-width: 768px) {
+  .logo .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    background-color: var(--very-dark-blue);
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    padding: 1rem;
+    border-bottom: none;
+    color: var(--white);
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    /* border-bottom: 4px solid var(--orange); */
+    color: var(--white);
+  }
 }
