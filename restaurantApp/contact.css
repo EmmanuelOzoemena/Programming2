@@ -5,3 +5,127 @@
   padding: 0;
   /* box-sizing: border-box; */
 }
+
+:root {
+  /* Primary */
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+
+  /* Neutral */
+
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  /* (with 75% opacity for lightbox background) */
+  --black: hsl(0, 0%, 0%);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* ---------- Header styles ---------- */
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+
+  border-bottom: 2px solid var(--light-grayish-blue);
+}
+
+.logo h3 {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.middle-section,
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+/* .middle-section img {
+  margin-right: 2.5rem;
+  cursor: pointer;
+} */
+
+.toggle-btn {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+
+  padding: 2rem 0;
+  border-bottom: 4px solid transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 4px;
+  background-color: var(--orange);
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  border-bottom: 4px solid var(--orange);
+  color: var(--very-dark-blue);
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.right-section img {
+  cursor: pointer;
+}
+
+.right-section .avatar-pic {
+  width: 3rem;
+  height: 3rem;
+
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border 0.3s ease-in-out;
+}
+
+.avatar-pic:hover {
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+}
