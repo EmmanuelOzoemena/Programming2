@@ -9,7 +9,6 @@
 :root {
   /* Primary */
   --orange: hsl(26, 100%, 55%);
-  --pale-orange: hsl(25, 100%, 94%);
 
   /* Neutral */
 
@@ -19,7 +18,6 @@
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
 
-  /* (with 75% opacity for lightbox background) */
   --black: hsl(0, 0%, 0%);
 }
 
