@@ -6,8 +6,11 @@ import "./Header.css";
 const Header = ({ count }) => {
   const [showCart, setShowCart] = useState(false);
 
-  const handleMouseEnter = () => setShowCart(true);
-  const handleMouseLeave = () => setShowCart(false);
+  const handleShowCart = () => {
+    setShowCart((prev) => !prev);
+  };
+
+  const price = 125;
 
   return (
     <>
@@ -54,8 +57,7 @@ const Header = ({ count }) => {
               <img
                 src="images/icon-cart.svg"
                 alt="cart"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                onClick={handleShowCart}
               />
             </div>
 
@@ -75,11 +77,15 @@ const Header = ({ count }) => {
                   <img src={thumbnail} alt="thumbN" className="thumbnail" />
 
                   <p className="cart-item-name">
-                    Fall Limited Edition Sneakers <br />
-                    $125.00 x 3 = <span>$375.00</span>
+                    Fall Limited Edition Sneakers <br />${price.toFixed(2)} x{" "}
+                    {count} = <span>${(price * count).toFixed(2)}</span>
                   </p>
 
-                  <img src={deleteIcon} alt="delete-icon" className="delete-icon" />
+                  <img
+                    src={deleteIcon}
+                    alt="delete-icon"
+                    className="delete-icon"
+                  />
                 </div>
 
                 <button className="checkout-btn">Checkout</button>
