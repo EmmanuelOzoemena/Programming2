@@ -5,16 +5,18 @@ import "./Header.css";
 
 const Header = ({ cartCount, setCartCount }) => {
   const [showCart, setShowCart] = useState(false);
+  const [cartItem, setCartIem] = useState({
+    name: "Fall Limited Edition Sneakers",
+    price: 125,
+  });
 
   const handleShowCart = () => {
     setShowCart((prev) => !prev);
   };
 
   const handleDeleteItems = () => {
-    setCartCount(0)
-  }
-
-  const price = 125;
+    setCartCount(0);
+  };
 
   return (
     <>
@@ -81,8 +83,9 @@ const Header = ({ cartCount, setCartCount }) => {
                   <img src={thumbnail} alt="thumbN" className="thumbnail" />
 
                   <p className="cart-item-name">
-                    Fall Limited Edition Sneakers <br />${price.toFixed(2)} x{" "}
-                    {cartCount} = <span>${(price * cartCount).toFixed(2)}</span>
+                    {cartItem.name} <br />${cartItem.price.toFixed(2)} x{" "}
+                    {cartCount} ={" "}
+                    <span>${(cartItem.price * cartCount).toFixed(2)}</span>
                   </p>
 
                   <img
