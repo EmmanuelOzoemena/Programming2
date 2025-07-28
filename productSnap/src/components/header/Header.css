@@ -161,7 +161,7 @@ nav ul li a.active {
 .cart-item-name {
   font-size: 14px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 22px;
   color: var(--dark-grayish-blue);
   font-weight: 500;
 }
@@ -182,7 +182,7 @@ span {
   border: none;
   background-color: var(--orange);
   color: var(--very-dark-blue);
-  border-radius: 8px;
+  border-radius: 6px;
 
   font-size: 0.9rem;
   font-weight: 700;
