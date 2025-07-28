@@ -4,12 +4,12 @@ import Hero from "./components/hero/Hero";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [cartCount, setCartCount] = useState(0); 
 
   return (
     <>
-      <Header count={count} />
-      <Hero count={count} setCount={setCount} />
+      <Header cartCount={cartCount} setCartCount={setCartCount} />
+      <Hero cartCount={cartCount} setCartCount={setCartCount} />
     </>
   );
 }

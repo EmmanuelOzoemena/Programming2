@@ -1,22 +1,30 @@
+import { useState } from "react";
 import { productImages } from "../../data/productImages";
 import minusIcon from "../../assets/icon-minus.svg";
 import plusIcon from "../../assets/icon-plus.svg";
 import cartIcon from "../../assets/icon-cart.svg";
 import "./Hero.css";
 
-const Hero = ({ count, setCount }) => {
+const Hero = ({ cartCount, setCartCount }) => {
+  const [count, setCount] = useState(0);
+
   const increaseQuantity = () => {
     setCount(count + 1);
-
-    // if (count < 0) {
-    //   alert("No cart to be removed");
-    // } else {
-    //   setCount(count + 1);
-    // }
   };
 
   const decreaseQuantity = () => {
-    setCount(count - 1);
+    if (count <= 0) {
+      alert("Your cart is already empty.");
+    } else {
+      setCount(count - 1);
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (count > 0) {
+      setCartCount(cartCount + count);
+      setCount(0); // reset selection if you want
+    }
   };
 
   return (
@@ -68,7 +76,7 @@ const Hero = ({ count, setCount }) => {
               </button>
             </div>
 
-            <button className="add-to-cart-btn">
+            <button className="add-to-cart-btn" onClick={handleAddToCart}>
               <img src={cartIcon} alt="cart-icon" />
               <span>Add to Cart</span>
             </button>

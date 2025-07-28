@@ -3,12 +3,16 @@ import deleteIcon from "../../assets/icon-delete.svg";
 import thumbnail from "../../assets/image-product-1-thumbnail.jpg";
 import "./Header.css";
 
-const Header = ({ count }) => {
+const Header = ({ cartCount, setCartCount }) => {
   const [showCart, setShowCart] = useState(false);
 
   const handleShowCart = () => {
     setShowCart((prev) => !prev);
   };
+
+  const handleDeleteItems = () => {
+    setCartCount(0)
+  }
 
   const price = 125;
 
@@ -53,7 +57,7 @@ const Header = ({ count }) => {
 
           <div className="right-section">
             <div className="cart-icon">
-              <div className="cart-quantity">{count}</div>
+              <div className="cart-quantity">{cartCount}</div>
               <img
                 src="images/icon-cart.svg"
                 alt="cart"
@@ -78,13 +82,14 @@ const Header = ({ count }) => {
 
                   <p className="cart-item-name">
                     Fall Limited Edition Sneakers <br />${price.toFixed(2)} x{" "}
-                    {count} = <span>${(price * count).toFixed(2)}</span>
+                    {cartCount} = <span>${(price * cartCount).toFixed(2)}</span>
                   </p>
 
                   <img
                     src={deleteIcon}
                     alt="delete-icon"
                     className="delete-icon"
+                    onClick={handleDeleteItems}
                   />
                 </div>
 
