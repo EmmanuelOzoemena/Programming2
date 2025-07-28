@@ -59,7 +59,11 @@ const Header = ({ cartCount, setCartCount }) => {
 
           <div className="right-section">
             <div className="cart-icon">
-              <div className="cart-quantity">{cartCount}</div>
+              {cartCount === 0 ? (
+                <></>
+              ) : (
+                <div className="cart-quantity">{cartCount}</div>
+              )}
               <img
                 src="images/icon-cart.svg"
                 alt="cart"
