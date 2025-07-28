@@ -260,7 +260,18 @@ nav ul li a.active {
   opacity: 0.8;
 }
 
+/* Contact media query */
 
+@media (max-width: 768px) {
+  .contact-page {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-info {
+    margin-bottom: 1rem;
+  }
+}
 
 
 /* Footer container */
