@@ -94,6 +94,23 @@ nav ul li a.active {
   border-radius: 50%;
 }
 
+.cart-icon {
+  position: relative;
+}
+
+.cart-quantity {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  width: 90%;
+  border-radius: 30px;
+}
+
 .cart-dropdown {
   position: absolute;
   top: 60px;
@@ -124,4 +141,56 @@ nav ul li a.active {
   text-align: center;
   padding: 2rem 0;
   font-size: 0.85rem;
+}
+
+.cart-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cart-items .thumbnail {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+.cart-item-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+}
+
+span {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px 0;
+  margin: 1rem 0 0 0;
+  border: none;
+  background-color: var(--orange);
+  color: var(--very-dark-blue);
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.checkout-btn:hover {
+  opacity: 0.7;
 }

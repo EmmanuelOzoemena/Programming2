@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { productImages } from "../../data/productImages";
 import minusIcon from "../../assets/icon-minus.svg";
 import plusIcon from "../../assets/icon-plus.svg";
 import cartIcon from "../../assets/icon-cart.svg";
 import "./Hero.css";
 
-const Hero = () => {
-  const [count, setCount] = useState(0);
-
+const Hero = ({ count, setCount }) => {
   const increaseQuantity = () => {
     setCount(count + 1);
 

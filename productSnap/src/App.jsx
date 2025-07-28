@@ -1,12 +1,15 @@
-import "./App.css";
+import { useState } from "react";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <>
-      <Header />
-      <Hero />
+      <Header count={count} />
+      <Hero count={count} setCount={setCount} />
     </>
   );
 }

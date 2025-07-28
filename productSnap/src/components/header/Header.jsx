@@ -1,7 +1,9 @@
 import { useState } from "react";
+import deleteIcon from "../../assets/icon-delete.svg";
+import thumbnail from "../../assets/image-product-1-thumbnail.jpg";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ count }) => {
   const [showCart, setShowCart] = useState(false);
 
   const handleMouseEnter = () => setShowCart(true);
@@ -47,13 +49,15 @@ const Header = () => {
           </div>
 
           <div className="right-section">
-            <img
-              src="images/icon-cart.svg"
-              alt="cart"
-              className="cart-icon"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            />
+            <div className="cart-icon">
+              <div className="cart-quantity">{count}</div>
+              <img
+                src="images/icon-cart.svg"
+                alt="cart"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              />
+            </div>
 
             <img
               src="images/image-avatar.png"
@@ -65,7 +69,20 @@ const Header = () => {
               <div className="cart-dropdown">
                 <h4>Cart</h4>
                 <hr />
-                <p className="empty-cart">Your cart is empty.</p>
+                {/* <p className="empty-cart">Your cart is empty.</p> */}
+
+                <div className="cart-items">
+                  <img src={thumbnail} alt="thumbN" className="thumbnail" />
+
+                  <p className="cart-item-name">
+                    Fall Limited Edition Sneakers <br />
+                    $125.00 x 3 = <span>$375.00</span>
+                  </p>
+
+                  <img src={deleteIcon} alt="delete-icon" className="delete-icon" />
+                </div>
+
+                <button className="checkout-btn">Checkout</button>
               </div>
             )}
           </div>
