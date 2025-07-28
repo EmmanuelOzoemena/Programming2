@@ -77,26 +77,35 @@ const Header = ({ cartCount, setCartCount }) => {
               <div className="cart-dropdown">
                 <h4>Cart</h4>
                 <hr />
-                {/* <p className="empty-cart">Your cart is empty.</p> */}
 
-                <div className="cart-items">
-                  <img src={thumbnail} alt="thumbN" className="thumbnail" />
+                {cartCount === 0 ? (
+                  <p className="empty-cart">Your cart is empty.</p>
+                ) : (
+                  <>
+                    <div className="cart-items">
+                      <img
+                        src={thumbnail}
+                        alt="thumbnail"
+                        className="thumbnail"
+                      />
 
-                  <p className="cart-item-name">
-                    {cartItem.name} <br />${cartItem.price.toFixed(2)} x{" "}
-                    {cartCount} ={" "}
-                    <span>${(cartItem.price * cartCount).toFixed(2)}</span>
-                  </p>
+                      <p className="cart-item-name">
+                        {cartItem.name} <br />${cartItem.price.toFixed(2)} x{" "}
+                        {cartCount} ={" "}
+                        <span>${(cartItem.price * cartCount).toFixed(2)}</span>
+                      </p>
 
-                  <img
-                    src={deleteIcon}
-                    alt="delete-icon"
-                    className="delete-icon"
-                    onClick={handleDeleteItems}
-                  />
-                </div>
+                      <img
+                        src={deleteIcon}
+                        alt="delete-icon"
+                        className="delete-icon"
+                        onClick={handleDeleteItems}
+                      />
+                    </div>
 
-                <button className="checkout-btn">Checkout</button>
+                    <button className="checkout-btn">Checkout</button>
+                  </>
+                )}
               </div>
             )}
           </div>
