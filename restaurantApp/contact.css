@@ -182,6 +182,7 @@ nav ul li a.active {
 /* Contact container */
 
 .contact-hero {
+  margin-top: 1rem;
   background: url("assets/chef-pic.jpg") no-repeat center/cover;
   color: var(--white);
   text-align: center;
@@ -273,14 +274,13 @@ nav ul li a.active {
   }
 }
 
-
 /* Footer container */
 
 .footer-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1190px;
   padding: 2rem 5rem;
-  margin: 2rem auto 0 auto;
+  margin: 5rem auto 0 auto;
   background-color: var(--light-grayish-blue);
 }
 
