@@ -27,6 +27,8 @@ header {
   width: 100%;
   height: 250px;
   background-image: url("images/image-hero-desktop.jpg");
+  /* background-position: center; */
+  /* background-size: cover; */
 }
 
 .navbar {
@@ -50,6 +52,10 @@ nav ul li a {
   cursor: pointer;
 }
 
+.menu {
+  display: none;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -57,4 +63,26 @@ nav ul li a {
 
 .attribution a {
   color: var(--attribution);
+}
+
+@media (max-width: 768px) {
+  header {
+    background-image: url("images/image-hero-desktop.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 2rem 1.5rem;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
 }
