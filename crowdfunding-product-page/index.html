@@ -31,6 +31,7 @@
         <div class="logo">
           <img src="images/logo.svg" alt="logo" />
         </div>
+
         <nav>
           <ul>
             <li><a href="#">About</a></li>
@@ -39,9 +40,19 @@
           </ul>
         </nav>
 
-        <div class="menu">
-          <img src="images/icon-hamburger.svg" alt="hamburger-menu" />
-        </div>
+        <button class="menu" onclick="toggleMenu()">
+          <img
+            class="open-icon"
+            src="images/icon-hamburger.svg"
+            alt="hamburger-menu"
+          />
+
+          <img
+            class="close-icon"
+            src="images/icon-close-menu.svg"
+            alt="close menu"
+          />
+        </button>
       </div>
     </header>
 
@@ -52,5 +63,7 @@
       Coded by
       <a href="https://www.linkedin.com/in/emmanuelozo/">Emmanuel Ozoemena</a>
     </div> -->
+
+    <script src="script.js"></script>
   </body>
 </html>
