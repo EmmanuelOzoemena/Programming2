@@ -20,13 +20,15 @@ nav ul {
   align-items: center;
 }
 
-.left-section img {
+.left-section .logo {
   margin-right: 2.5rem;
   cursor: pointer;
 }
 
-.toggle-btn {
+.left-section .menu-icon,
+.left-section .close-icon {
   display: none;
+  cursor: pointer;
 }
 
 nav ul {
@@ -193,4 +195,42 @@ span {
 
 .checkout-btn:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .left-section .menu-icon {
+    display: block;
+    margin-right: 1rem;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    background-color: var(--very-dark-blue);
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  /* nav ul.show {
+    display: flex;
+  } */
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    padding: 1rem;
+    border-bottom: none;
+    color: var(--white);
+  }
+
+  nav ul li a:hover {
+    /* border-bottom: 4px solid var(--orange); */
+    color: var(--white);
+  }
 }

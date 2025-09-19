@@ -1,14 +1,21 @@
 import { useState } from "react";
+import menuIcon from "../../assets/icon-menu.svg";
+import closeIcon from "../../assets/icon-close.svg";
 import deleteIcon from "../../assets/icon-delete.svg";
 import thumbnail from "../../assets/image-product-1-thumbnail.jpg";
 import "./Header.css";
 
 const Header = ({ cartCount, setCartCount }) => {
   const [showCart, setShowCart] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartItem, setCartIem] = useState({
     name: "Fall Limited Edition Sneakers",
     price: 125,
   });
+
+  const handleToggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const handleShowCart = () => {
     setShowCart((prev) => !prev);
@@ -23,19 +30,15 @@ const Header = ({ cartCount, setCartCount }) => {
       <header>
         <div className="header-container">
           <div className="left-section">
-            {/* <div className="toggle-btn"> */}
             <img
-              src="images/icon-menu.svg"
+              src={menuIcon}
               alt="menu-icon"
-              className="toggle-btn"
+              className="menu-icon"
+              onClick={handleToggleMenu}
             />
-            <img
-              src="images/icon-close.svg"
-              alt="close-icon"
-              className="toggle-btn"
-            />
-            {/* </div> */}
-            <img src="images/logo.svg" alt="logo" />
+            <img src={closeIcon} alt="close-icon" className="close-icon" />
+
+            <img src="images/logo.svg" alt="logo" className="logo" />
             <nav>
               <ul>
                 <li>
